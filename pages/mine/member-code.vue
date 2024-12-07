@@ -18,10 +18,10 @@
         >
         <!-- user grids begin -->
         <view class="w-100 d-flex font-size-sm text-color-assist mb-30">
-          <view class="user-grid" @tap="coupons">
+          <!-- <view class="user-grid" @tap="coupons">
             <view class="value">{{ member.couponNum }}</view>
             <view>木易券</view>
-          </view>
+          </view> -->
           <view class="user-grid" @tap="integrals">
             <view class="value">{{ member.pointNum }}</view>
             <view>积分</view>
@@ -30,10 +30,10 @@
             <view class="value">{{ member.balance }}</view>
             <view>余额</view>
           </view>
-          <view class="user-grid">
+          <!-- <view class="user-grid">
             <view class="value">{{ member.giftBalance }}</view>
             <view>礼品卡</view>
-          </view>
+          </view> -->
         </view>
         <!-- user grids end -->
         <!-- qrcode begin -->
@@ -63,11 +63,11 @@
       </view>
       <!-- user box end -->
     </view>
-    <image
+    <!-- <image
       src="https://img-shop.qmimg.cn/s16/images/2020/04/26/4a36d33657677787.png"
       class="w-100"
       mode="widthFix"
-    ></image>
+    ></image> -->
   </view>
 </template>
 

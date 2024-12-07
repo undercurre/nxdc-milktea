@@ -3,7 +3,7 @@
     <view style="margin-bottom: 130rpx">
       <view class="section-1">
         <template v-if="orderType == 'takein'">
-          <list-cell class="location">
+          <!-- <list-cell class="location">
             <view
               class="flex-fill d-flex justify-content-between align-items-center"
             >
@@ -12,7 +12,7 @@
               </view>
               <image src="/static/images/navigator-1.png" class="arrow"></image>
             </view>
-          </list-cell>
+          </list-cell> -->
         </template>
         <template v-else>
           <list-cell @click="chooseAddress">
@@ -39,14 +39,14 @@
           </list-cell>
         </template>
         <template v-if="orderType == 'takein'">
-          <list-cell arrow class="meal-time">
+          <!-- <list-cell arrow class="meal-time">
             <view
               class="flex-fill d-flex justify-content-between align-items-center"
             >
               <view class="title">取餐时间</view>
               <view class="time">立即用餐</view>
             </view>
-          </list-cell>
+          </list-cell> -->
           <list-cell class="contact" last :hover="false">
             <view
               class="flex-fill d-flex justify-content-between align-items-center"
@@ -125,7 +125,7 @@
             </list-cell>
           </template>
         </view>
-        <list-cell arrow @click="goToPackages">
+        <!-- <list-cell arrow @click="goToPackages">
           <view
             class="flex-fill d-flex justify-content-between align-items-center"
           >
@@ -140,7 +140,7 @@
             <view class="text-color-base">礼品卡</view>
             <view class="text-color-primary">请选择</view>
           </view>
-        </list-cell>
+        </list-cell> -->
         <list-cell last>
           <view class="flex-fill d-flex justify-content-end align-items-center">
             <view>总计￥{{ total }},实付</view>
@@ -151,13 +151,13 @@
         </list-cell>
       </view>
       <!-- 购物车列表 end -->
-      <view
+      <!-- <view
         class="d-flex align-items-center justify-content-start font-size-sm text-color-warning"
         style="padding: 20rpx 0"
       >
         <view class="iconfont iconhelp line-height-100"></view>
         <view>优惠券不与满赠、满减活动共享</view>
-      </view>
+      </view> -->
       <!-- 支付方式 begin -->
       <view class="payment">
         <list-cell last :hover="false">

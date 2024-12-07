@@ -13,12 +13,12 @@
       <view class="entrance">
         <view class="item" @tap="takein">
           <image src="/static/images/index/yuyue.png" class="icon"></image>
-          <view class="title">预约</view>
+          <view class="title">点单</view>
         </view>
-        <view class="item" @tap="takeout">
+        <!-- <view class="item" @tap="takeout">
           <image src="/static/images/index/xiadan.png" class="icon"></image>
           <view class="title">下单</view>
-        </view>
+        </view> -->
       </view>
       <view class="info">
         <view class="integral_section" @tap="integrals">

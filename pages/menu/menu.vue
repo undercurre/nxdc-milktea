@@ -109,7 +109,9 @@
                       <text class="name">{{ good.name }}</text>
                       <text class="tips">{{ good.content }}</text>
                       <view class="price_and_action">
-                        <text class="price">￥{{ good.price }}</text>
+                        <text class="price"
+                          >￥{{ good.price }} / {{ good.unit }}</text
+                        >
                         <view class="btn-group" v-if="good.use_property">
                           <button
                             type="primary"
@@ -118,7 +120,7 @@
                             size="mini"
                             @tap="showGoodDetailModal(item, good)"
                           >
-                            选规格
+                            预约
                           </button>
                           <view class="dot" v-show="goodCartNum(good.id)">{{
                             goodCartNum(good.id)

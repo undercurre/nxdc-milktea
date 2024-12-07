@@ -12,7 +12,7 @@
         <view>快去犒劳一下自己吧~</view>
       </view>
       <button type="primary" class="drink-btn" size="default" @tap="menu">
-        去点餐
+        去点单
       </button>
       <view class="font-size-sm text-color-primary" @tap="orders"
         >查看历史订单</view
@@ -23,7 +23,7 @@
         <view class="bg-white">
           <view class="section">
             <!-- store info begin -->
-            <list-cell :hover="false">
+            <!-- <list-cell :hover="false">
               <view class="w-100 d-flex align-items-center">
                 <view class="d-flex flex-column w-60">
                   <view
@@ -44,7 +44,7 @@
                   ></image>
                 </view>
               </view>
-            </list-cell>
+            </list-cell> -->
             <!-- store info end -->
             <list-cell :hover="false" padding="50rpx 30rpx">
               <view class="w-100 d-flex flex-column">
@@ -55,116 +55,60 @@
                   <view class="sort-num">{{ order.sort_num }}</view>
                 </view>
                 <!-- steps begin -->
-                <view class="d-flex just-content-center">
-                  <view
-                    class="steps d-flex flex-column"
-                    :class="{
-                      'w-80': order.typeCate == 1,
-                      'w-100': order.typeCate == 2,
-                    }"
-                  >
-                    <view class="steps__img-column">
-                      <view class="steps__img-column-item">
-                        <image
-                          src="/static/images/order/ordered_selected.png"
-                          v-if="order.status >= 1"
-                        ></image>
-                        <image
-                          src="/static/images/order/ordered_selected.png"
-                          v-else
-                        ></image>
-                      </view>
-                      <view
-                        class="steps__img-column-item"
-                        :class="{ active: order.status >= 2 }"
-                      >
-                        <image
-                          src="/static/images/order/production_selected.png"
-                          v-if="order.status >= 2"
-                        ></image>
-                        <image
-                          src="/static/images/order/production.png"
-                          v-else
-                        ></image>
-                      </view>
-                      <view
-                        class="steps__img-column-item"
-                        :class="{ active: order.status >= 3 }"
-                        v-if="order.typeCate == 2"
-                      >
-                        <image
-                          src="/static/images/order/delivery_selected.png"
-                          v-if="order.status >= 3"
-                        ></image>
-                        <image
-                          src="/static/images/order/delivered.png"
-                          v-else
-                        ></image>
-                      </view>
-                      <view
-                        class="steps__img-column-item"
-                        :class="{ active: order.status >= 4 }"
-                      >
-                        <image
-                          src="/static/images/order/delivered_selected.png"
-                          v-if="order.status >= 4"
-                        ></image>
-                        <image
-                          src="/static/images/order/delivered.png"
-                          v-else
-                        ></image>
-                      </view>
-                    </view>
-                    <view class="steps__text-column">
-                      <view
-                        class="steps__text-column-item"
-                        :class="{ active: order.status >= 1 }"
-                      >
-                        <view
-                          class="steps__column-item-line bg-transparent"
-                        ></view>
-                        <view class="steps__text-column-item-text">已下单</view>
-                        <view class="steps__column-item-line"></view>
-                      </view>
-                      <view
-                        class="steps__text-column-item"
-                        :class="{ active: order.status >= 2 }"
-                      >
-                        <view class="steps__column-item-line"></view>
-                        <view class="steps__text-column-item-text">制作中</view>
-                        <view class="steps__column-item-line"></view>
-                      </view>
-                      <view
-                        class="steps__text-column-item"
-                        :class="{ active: order.status >= 3 }"
-                        v-if="order.typeCate == 2"
-                      >
-                        <view class="steps__column-item-line"></view>
-                        <view class="steps__text-column-item-text">配送中</view>
-                        <view class="steps__column-item-line"></view>
-                      </view>
-                      <view
-                        class="steps__text-column-item"
-                        :class="{ active: order.status >= 4 }"
-                      >
-                        <view class="steps__column-item-line"></view>
-                        <view class="steps__text-column-item-text">
-                          {{ order.typeCate == 2 ? "已送达" : "请取餐" }}
-                        </view>
-                        <view
-                          class="steps__column-item-line bg-transparent"
-                        ></view>
-                      </view>
-                    </view>
-                  </view>
-                </view>
+                <!-- <view class="d-flex just-content-center">
+									<view class="steps d-flex flex-column" :class="{'w-80': order.typeCate == 1, 'w-100': order.typeCate == 2}">
+										<view class="steps__img-column">
+											<view class="steps__img-column-item">
+												<image src="/static/images/order/ordered_selected.png" v-if="order.status >= 1"></image>
+												<image src="/static/images/order/ordered_selected.png" v-else></image>
+											</view>
+											<view class="steps__img-column-item" :class="{active: order.status >= 2}">
+												<image src="/static/images/order/production_selected.png" v-if="order.status >= 2"></image>
+												<image src="/static/images/order/production.png" v-else></image>
+											</view>
+											<view class="steps__img-column-item" :class="{active: order.status >= 3}" v-if="order.typeCate == 2">
+												<image src="/static/images/order/delivery_selected.png" v-if="order.status >= 3"></image>
+												<image src="/static/images/order/delivered.png" v-else></image>
+											</view>
+											<view class="steps__img-column-item" :class="{active: order.status >= 4}">
+												<image src="/static/images/order/delivered_selected.png" v-if="order.status >= 4"></image>
+												<image src="/static/images/order/delivered.png" v-else></image>
+											</view>
+										</view>
+										<view class="steps__text-column">
+											<view class="steps__text-column-item" :class="{active: order.status >= 1}">
+												<view class="steps__column-item-line bg-transparent"></view>
+												<view class="steps__text-column-item-text">已下单</view>
+												<view class="steps__column-item-line"></view>
+											</view>
+											<view class="steps__text-column-item" :class="{active: order.status >= 2}">
+												<view class="steps__column-item-line"></view>
+												<view class="steps__text-column-item-text">制作中</view>
+												<view class="steps__column-item-line"></view>
+											</view>
+											<view class="steps__text-column-item" :class="{active: order.status >= 3}" v-if="order.typeCate == 2">
+												<view class="steps__column-item-line"></view>
+												<view class="steps__text-column-item-text">配送中</view>
+												<view class="steps__column-item-line"></view>
+											</view>
+											<view class="steps__text-column-item" :class="{active: order.status >= 4}">
+												<view class="steps__column-item-line"></view>
+												<view class="steps__text-column-item-text">
+													{{ order.typeCate == 2 ? '已送达' : '请取餐' }}
+												</view>
+												<view class="steps__column-item-line bg-transparent"></view>
+											</view>
+										</view>
+									</view>
+								</view> -->
                 <!-- steps end -->
                 <view
                   v-if="order.status <= 1"
                   class="d-flex just-content-center align-items-center font-size-base text-color-assist mb-40"
                 >
                   您前面还有
-                  <text class="text-color-primary mr-10 ml-10">4</text> 单待制作
+                  <text class="text-color-primary mr-10 ml-10">4</text>
+                  位顾客待服务
                 </view>
                 <!-- goods begin -->
                 <view
@@ -229,10 +173,10 @@
                     $util.formatDateTime(order.created_at)
                   }}</view>
                 </view>
-                <view class="pay-cell">
+                <!-- <view class="pay-cell">
                   <view>下单门店</view>
                   <view class="font-weight-bold">{{ order.store.name }}</view>
-                </view>
+                </view> -->
                 <view class="pay-cell">
                   <view>支付方式</view>
                   <view class="font-weight-bold">{{ order.pay_mode }}</view>
@@ -252,14 +196,14 @@
                 <view>取单号</view>
                 <view class="font-weight-bold">{{ order.sort_num }}</view>
               </view>
-              <view class="pay-cell">
+              <!-- <view class="pay-cell">
                 <view>享用方式</view>
                 <view class="font-weight-bold">自取</view>
               </view>
               <view class="pay-cell">
                 <view>取餐时间</view>
                 <view class="font-weight-bold">立即取餐</view>
-              </view>
+              </view> -->
               <view class="pay-cell">
                 <view>完成制作时间</view>
                 <view class="font-weight-bold">{{
