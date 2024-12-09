@@ -177,7 +177,7 @@ export default {
         return;
       }
       uni.navigateTo({
-        url: "/pages/packages/index",
+        url: "/Mine/pages/packages/index",
       });
     },
     balance() {
@@ -186,18 +186,18 @@ export default {
         return;
       }
       uni.navigateTo({
-        url: "/pages/balance/balance",
+        url: "/Mine/pages/balance/balance",
       });
     },
-    addresses() {
-      if (!this.isLogin) {
-        this.login();
-        return;
-      }
-      uni.navigateTo({
-        url: "/pages/address/address",
-      });
-    },
+    // addresses() {
+    //   if (!this.isLogin) {
+    //     this.login();
+    //     return;
+    //   }
+    //   uni.navigateTo({
+    //     url: "/pages/address/address",
+    //   });
+    // },
     integrals() {
       if (!this.isLogin) {
         this.login();
@@ -213,7 +213,7 @@ export default {
         return;
       }
       uni.navigateTo({
-        url: "/pages/attendance/attendance",
+        url: "/Mine/pages/attendance/attendance",
       });
     },
     orders() {
@@ -240,7 +240,7 @@ export default {
         return;
       }
       uni.navigateTo({
-        url: "/pages/coupons/coupons",
+        url: "/Mine/pages/coupons/coupons",
       });
     },
     userinfo() {
@@ -254,7 +254,7 @@ export default {
     },
     services() {
       uni.navigateTo({
-        url: "/pages/services/services",
+        url: "/Mine/pages/services/services",
       });
     },
     giftCards() {
@@ -263,7 +263,7 @@ export default {
         return;
       }
       uni.navigateTo({
-        url: "/pages/giftcard/giftcard",
+        url: "/Mine/pages/giftcard/giftcard",
       });
     },
   },

@@ -73,7 +73,7 @@
 
 <script>
 import { mapState } from "vuex";
-import uQRCode from "@/common/uqrcode";
+import uQRCode from "../../common/uqrcode";
 
 export default {
   data() {
@@ -110,17 +110,17 @@ export default {
     },
     integrals() {
       uni.navigateTo({
-        url: "/pages/integrals/integrals",
+        url: "/Mine/pages/integrals/integrals",
       });
     },
     balance() {
       uni.navigateTo({
-        url: "/pages/balance/balance",
+        url: "/Mine/pages/balance/balance",
       });
     },
     coupons() {
       uni.navigateTo({
-        url: "/pages/coupons/coupons",
+        url: "/Mine/pages/coupons/coupons",
       });
     },
   },

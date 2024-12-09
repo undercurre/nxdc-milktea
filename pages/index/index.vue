@@ -69,27 +69,27 @@ export default {
         url: "/pages/menu/menu",
       });
     },
-    takeout() {
-      if (!this.isLogin) {
-        uni.navigateTo({ url: "/pages/login/login" });
-        return;
-      }
-      uni.navigateTo({
-        url: "/pages/address/address?is_choose=true",
-      });
-    },
+    // takeout() {
+    //   if (!this.isLogin) {
+    //     uni.navigateTo({ url: "/pages/login/login" });
+    //     return;
+    //   }
+    //   uni.navigateTo({
+    //     url: "/pages/address/address?is_choose=true",
+    //   });
+    // },
     integrals() {
       if (!this.isLogin) {
         uni.navigateTo({ url: "/pages/login/login" });
         return;
       }
       uni.navigateTo({
-        url: "/pages/integrals/integrals",
+        url: "/Mine/pages/integrals/integrals",
       });
     },
     packages() {
       uni.navigateTo({
-        url: "/pages/packages/index",
+        url: "/Mine/pages/packages/index",
       });
     },
     memberCode() {
@@ -103,7 +103,7 @@ export default {
     },
     invite() {
       uni.navigateTo({
-        url: "/pages/activities/invite",
+        url: "/Other/pages/activities/invite",
       });
     },
   },

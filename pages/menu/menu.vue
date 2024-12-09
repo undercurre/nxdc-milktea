@@ -358,8 +358,8 @@
 </template>
 
 <script>
-import modal from "@/components/modal/modal";
-import popupLayer from "@/components/popup-layer/popup-layer";
+import modal from "../../components/modal/modal";
+import popupLayer from "../../components/popup-layer/popup-layer";
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
 export default {
@@ -449,18 +449,18 @@ export default {
       this.loading = false;
       this.cart = uni.getStorageSync("cart") || [];
     },
-    takout() {
-      if (this.orderType == "takeout") return;
+    // takout() {
+    //   if (this.orderType == "takeout") return;
 
-      if (!this.isLogin) {
-        uni.navigateTo({ url: "/pages/login/login" });
-        return;
-      }
+    //   if (!this.isLogin) {
+    //     uni.navigateTo({ url: "/pages/login/login" });
+    //     return;
+    //   }
 
-      uni.navigateTo({
-        url: "/pages/address/address?is_choose=true",
-      });
-    },
+    //   uni.navigateTo({
+    //     url: "/pages/address/address?is_choose=true",
+    //   });
+    // },
     handleMenuTap(id) {
       //点击菜单项事件
       if (!this.sizeCalcState) {
@@ -637,7 +637,7 @@ export default {
       uni.setStorageSync("cart", JSON.parse(JSON.stringify(this.cart)));
 
       uni.navigateTo({
-        url: "/pages/pay/pay",
+        url: "/Menu/pages/pay/pay",
       });
       uni.hideLoading();
     },
@@ -646,5 +646,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/pages/menu/menu.scss";
+@import "~../../pages/menu/menu.scss";
 </style>

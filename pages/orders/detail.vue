@@ -153,8 +153,8 @@
 </template>
 
 <script>
-import Orders from "@/api/orders";
-import listCell from "@/components/list-cell/list-cell";
+import Orders from "../../api/orders";
+import listCell from "../../components/list-cell/list-cell";
 
 export default {
   components: {
@@ -173,7 +173,7 @@ export default {
       const date = this.order.completed_time.split(" ")[0];
       uni.navigateTo({
         url:
-          "/pages/review/review?storename=" +
+          "/Order/pages/review/review?storename=" +
           this.order.store.name +
           "&typeCate=" +
           this.order.typeCate +
@@ -183,7 +183,7 @@ export default {
     },
     goToInvoice() {
       uni.navigateTo({
-        url: "/pages/invoice/invoice",
+        url: "/Order/pages/invoice/invoice",
       });
     },
   },

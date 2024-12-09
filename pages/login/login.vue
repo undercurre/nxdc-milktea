@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import Member from "@/api/member";
+import Member from "../../api/member";
 import { mapMutations } from "vuex";
 
 export default {

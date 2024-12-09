@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import listCell from "@/components/list-cell/list-cell";
+import listCell from "../../components/list-cell/list-cell";
 
 export default {
   components: {
@@ -130,7 +130,7 @@ export default {
       const date = order.completed_time.split(" ")[0];
       uni.navigateTo({
         url:
-          "/pages/review/review?storename=" +
+          "/Order/pages/review/review?storename=" +
           order.store.name +
           "&typeCate=" +
           order.typeCate +
@@ -140,7 +140,7 @@ export default {
     },
     goToInvoice() {
       uni.navigateTo({
-        url: "/pages/invoice/invoice",
+        url: "/Order/pages/invoice/invoice",
       });
     },
   },
